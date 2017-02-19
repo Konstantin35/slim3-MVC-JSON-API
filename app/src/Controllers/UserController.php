@@ -16,7 +16,8 @@ class UserController extends Container{
 
 	public function userInfo($request, $response, $args){
 		$model = new UserModel($this->container);
-		$response = $model->getDetails();
+		$rsp = $model->getDetails();
+		$response  = $response->withJson($rsp);
 		return $response;
 	}
 

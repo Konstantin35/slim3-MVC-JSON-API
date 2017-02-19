@@ -1,5 +1,11 @@
 <?php
-
+/*
+// need more details to enable Middleware
+use \App\Middleware\JsonResponse;
+$app->get('/details', '\App\Controllers\UserController:userInfo')
+  ->add(new JsonResponse());
+*/
+  
 $app->get('/', function ($request, $response, $args) {
 
     $response->write("Welcome to Slim!");

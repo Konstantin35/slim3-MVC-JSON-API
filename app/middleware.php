@@ -1,4 +1,8 @@
 <?php
+
+// need more details to enable Middleware
+//use \App\Middleware\JsonResponse;
+
 class ExampleMiddleware
 {
     /**

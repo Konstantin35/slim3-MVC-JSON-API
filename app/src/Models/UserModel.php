@@ -10,8 +10,7 @@ class UserModel extends Container{
 		$stmt = $this->container->db->prepare("select * from crud");
 		$stmt->execute();
 		$result = $stmt->fetchAll();
-		$response = json_encode($result);
-		return $response;
+		return $result;
 	}
 }
 
