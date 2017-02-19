@@ -19,6 +19,11 @@ $container['db'] = function ($c) {
     return $pdo;
 };
 
+// Register JSON View helper
+    return new App\Renders\JsonApiView;
+};
+
+
 $container['Example'] = function ($c) {
     return new \App\Controllers\Example;
 };
