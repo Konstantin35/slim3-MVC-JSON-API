@@ -20,6 +20,7 @@ $container['db'] = function ($c) {
 };
 
 // Register JSON View helper
+$container['json'] = function ($c) {
     return new App\Renders\JsonApiView;
 };
 
