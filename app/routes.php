@@ -7,15 +7,18 @@ $app->get('/details', '\App\Controllers\UserController:userInfo')
 */
   
 $app->get('/', function ($request, $response, $args) {
-
-    $response->write("Welcome to Slim!");
-    $this->logger->addInfo("Something interesting happened");
+	
+    $response->write('---Hello---');
+    //$this->logger->addInfo("Something interesting happened");
     return $response;
 
-})->add(new ExampleMiddleware());
+})->add(ExampleMiddleware::class);
 
 
  
 $app->get('/test', '\App\Controllers\UserController:test');
 $app->get('/details', '\App\Controllers\UserController:userInfo');
 
+$app->post('/AddDetails', '\App\Controllers\UserController:AddUserInfo');
+$app->post('/details/{id}', '\App\Controllers\UserController:getUser');
+	

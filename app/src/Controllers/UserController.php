@@ -17,11 +17,31 @@ class UserController extends Container{
 
 	public function userInfo($request, $response, $args)
 	{
-		$model 		= new UserModel($this->container);
-		$rsp 		= $model->getDetails();
+		$model 	= new UserModel($this->container);
+		$rsp 	= $model->getDetails();
 		
 		return $this->json->render($response,$rsp);
 	}
+
+	public function AddUserInfo($request, $response)
+	{
+
+		$input = $request->getParsedBody();
+		$model = new UserModel($this->container);
+		$rsp   = $model->addDetails($input);
+
+		return $this->json->render($response,$rsp);
+	}
+
+	public function getUser($request, $response, $args)
+	{
+
+		$model = new UserModel($this->container);
+		$rsp   = $model->getUser($args);
+		
+		return $this->json->render($response,$rsp);
+	}
+
 
 
 }
